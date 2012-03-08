@@ -29,7 +29,7 @@ public class Demo {
 		material m3 = new laptop ();
 		m3.weight = 1.0f;
 		
-		System.out.println (m1.weight);
+		//What is the difference between the first set of calculation and this set ?
 		System.out.println ("The frieght per KG of this book is "+ m1.calculate_freight() );
 		System.out.println ("The frieght per KG of this Phone is "+ m2.calculate_freight() );
 		System.out.println ("The frieght per KG of this Laptop is "+ m3.calculate_freight() );
