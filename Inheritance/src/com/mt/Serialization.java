@@ -210,6 +210,9 @@ public class Serialization {
 			e.printStackTrace();
 		}
 		
+
+
+		
 	}
 
 }
@@ -248,5 +251,55 @@ class apple_transient implements Serializable {
 	
 	public transient String color ; 
 	public String type ;
+	
+}
+
+class grape_apple implements Serializable {
+	
+	public String color ; 
+	public String type ;
+	
+	/*
+	 * Any classes that are referenced in a class that is meant to be serializable 
+	 * should be serializable as well. 
+	 * So, in this case, grape should implement Serializable as well
+	 * If you don't do it, it will throw a java.io.NotSerializableException
+	 * 
+	 * Also, apple, refers to the grape object, grape can refer to another object.
+	 * This way of one object referring another is called 'Object Graph' in Java
+	 * This is used by JVM for GC and other system activities.
+	 * If any object referred in the current class ( NOT inherited, just referred )
+	 * then, ALL of them should have implemented Serializable. 
+	 * If not, make them transient. Otherwise you get the java.io.NotSerializableException
+	 */
+	
+	public grape  gr;
+	
+}
+
+class grape implements Serializable {
+	
+	public String color ; 
+	public String type ;
+
+	
+}
+
+class apple_fruit extends fruit implements Serializable {
+	
+	 /* If a class apple extends a generic class 'fruit' which did not implement Serializable
+	  * thats not a problem.
+	  */
+	
+	public String color ; 
+	public String type ;
+	
+}
+
+class fruit  {
+	
+	public String tropic ; 
+	public String edible ;
+
 	
 }
