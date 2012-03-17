@@ -34,7 +34,7 @@ public class Demo {
 		System.out.println ("The frieght per KG of this Phone is "+ m2.calculate_freight() );
 		System.out.println ("The frieght per KG of this Laptop is "+ m3.calculate_freight() );
 		
-		
+		 
 	}
 
 
