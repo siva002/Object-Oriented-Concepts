@@ -1,4 +1,4 @@
-package com.trainersiva.core;
+package com.trainersiva.examples.core;
 
 public class ThreadExample {
 
